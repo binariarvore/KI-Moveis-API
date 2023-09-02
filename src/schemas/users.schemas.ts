@@ -20,4 +20,14 @@ const userCreateSchema = userSchema.pick({
 
 const userCreateSchemaReturn = userSchema.omit({ password: true });
 
-export { userSchema, userCreateSchema, userCreateSchemaReturn };
+const userArraySchemaReturn = z.array(userCreateSchemaReturn);
+
+const updateUserSchema = userSchema.omit({ admin: true }).partial();
+
+export {
+  userSchema,
+  userCreateSchema,
+  userCreateSchemaReturn,
+  userArraySchemaReturn,
+  updateUserSchema,
+};

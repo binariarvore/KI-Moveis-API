@@ -1,4 +1,4 @@
-import { compareSync } from 'bcryptjs';
+import { compare, compareSync } from 'bcryptjs';
 import AppError from '../error';
 import { userRepo } from '../repositories';
 import { sign } from 'jsonwebtoken';
@@ -10,7 +10,9 @@ const login = async (payload: Login) => {
 
   if (!user) throw new AppError('Invalid credentials', 401);
 
-  const pwdMatch = compareSync(password, user.password);
+  console.log(password);
+  console.log(user.password);
+  const pwdMatch: boolean = await compare(password, user.password);
 
   if (!pwdMatch) throw new AppError('Invalid credentials', 401);
 
