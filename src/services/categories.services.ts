@@ -19,4 +19,16 @@ const read = async () => {
   return allCategories;
 };
 
-export default { create, read };
+const readById = async (id: number) => {
+  const foundCategory = await categoryRepo.findOne({ where: { id: id } });
+  if (!foundCategory) throw new AppError('Category not found', 404);
+
+  const actualCategory = await categoryRepo.findOne({
+    where: { id: id },
+    relations: { realEstates: true },
+  });
+
+  return actualCategory;
+};
+
+export default { create, read, readById };

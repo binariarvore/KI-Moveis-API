@@ -15,4 +15,5 @@ categoriesRouter.post(
 
 categoriesRouter.get('/', categoriesControllers.read);
 
+categoriesRouter.get('/:id/realEstate', categoriesControllers.readByid);
 export default categoriesRouter;

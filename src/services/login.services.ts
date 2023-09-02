@@ -10,8 +10,6 @@ const login = async (payload: Login) => {
 
   if (!user) throw new AppError('Invalid credentials', 401);
 
-  console.log(password);
-  console.log(user.password);
   const pwdMatch: boolean = await compare(password, user.password);
 
   if (!pwdMatch) throw new AppError('Invalid credentials', 401);

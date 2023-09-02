@@ -12,4 +12,11 @@ const read = async (req: Request, res: Response): Promise<Response> => {
 
   return res.status(200).json(allCategories);
 };
-export default { create, read };
+
+const readByid = async (req: Request, res: Response): Promise<Response> => {
+  const { id } = req.params;
+  const categoriesAndEstates = await categoriesServices.readById(Number(id));
+
+  return res.status(200).json(categoriesAndEstates);
+};
+export default { create, read, readByid };
