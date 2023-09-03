@@ -7,6 +7,7 @@ import {
 import { Login } from './login.interfaces';
 import { Category, CreateCategory } from './categories.interfaces';
 import { CreateRealEstate, RealEstateReturn } from './realEstates.interfaces';
+import { CreateSchedule } from './schedules.interfaces';
 
 export {
   User,
@@ -18,4 +19,5 @@ export {
   CreateCategory,
   CreateRealEstate,
   RealEstateReturn,
+  CreateSchedule,
 };

@@ -6,8 +6,8 @@ export class Schedule {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
-  date: Date;
+  @Column({ type: 'date' })
+  date: string;
 
   @Column({ type: 'time' })
   hour: string;

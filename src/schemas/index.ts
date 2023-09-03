@@ -14,6 +14,7 @@ import {
   realEstateSchema,
   realEstateArraySchema,
 } from './realEstates.schemas';
+import { createScheduleSchema } from './schedules.schema';
 
 export {
   userSchema,
@@ -30,4 +31,5 @@ export {
   realEstateReturnSchema,
   realEstateSchema,
   realEstateArraySchema,
+  createScheduleSchema,
 };

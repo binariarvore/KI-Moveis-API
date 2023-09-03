@@ -20,13 +20,12 @@ const read = async () => {
 };
 
 const readById = async (id: number) => {
-  const foundCategory = await categoryRepo.findOne({ where: { id: id } });
-  if (!foundCategory) throw new AppError('Category not found', 404);
-
   const actualCategory = await categoryRepo.findOne({
     where: { id: id },
-    relations: { realEstates: true },
+    relations: { realEstate: true },
   });
+
+  if (!actualCategory) throw new AppError('Category not found', 404);
 
   return actualCategory;
 };

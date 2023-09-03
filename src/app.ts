@@ -6,6 +6,7 @@ import handleErrors from './middlewares/handle.middlewares';
 import loginRouter from './routers/login.routers';
 import categoriesRouter from './routers/categories.routers';
 import realEstateRouter from './routers/realEstate.routers';
+import scheduleRouter from './routers/schedules.router';
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use('/users', userRouter);
 app.use('/login', loginRouter);
 app.use('/categories', categoriesRouter);
 app.use('/realEstate', realEstateRouter);
+app.use('/schedules', scheduleRouter);
 
 app.use(handleErrors);
 
