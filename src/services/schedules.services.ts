@@ -14,7 +14,6 @@ const create = async (payload: CreateSchedule, userId: number) => {
   }
 
   const user = await userRepo.findOneBy({ id: userId });
-
   if (!user) throw new AppError('User not found', 404);
 
   const realEstate = await realEstateRepo.findOneBy({

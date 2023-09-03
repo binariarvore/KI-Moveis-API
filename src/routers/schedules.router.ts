@@ -5,14 +5,14 @@ import { createScheduleSchema } from '../schemas';
 
 const scheduleRouter: Router = Router();
 
-scheduleRouter.use(
+scheduleRouter.post(
   '',
   validateMiddlewares.token,
   validateMiddlewares.body(createScheduleSchema),
   schedulesControllers.create
 );
 
-scheduleRouter.use(
+scheduleRouter.get(
   '/realEstate/:id',
   validateMiddlewares.token,
   validateMiddlewares.adminOnly,
