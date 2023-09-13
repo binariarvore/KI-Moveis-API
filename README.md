@@ -98,7 +98,6 @@ Agendamento de uma visita a um imóvel com os seguintes dados:
 
 ### Observações:
 
-O userId é obtido através do token do usuário.
 Não é possível agendar duas visitas com a mesma data e hora para um usuário.
 Não é possível agendar uma visita com data e hora fora do horário comercial (08:00 às 18:00) ou em fins de semana.
 A rota pode ser acessada tanto por usuários comuns quanto administradores.
