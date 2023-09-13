@@ -28,11 +28,10 @@ Atualiza os dados do usuário.
 Não é possível atualizar os campos id e admin.
 Apenas administradores podem atualizar qualquer usuário, enquanto usuários não-administradores só podem atualizar seu próprio usuário.
 
-##DELETE - /users/:id
+## DELETE - /users/:id
 Realiza um soft delete do usuário.
 
-**Acesso: Apenas por administradores.
-**
+**Acesso: Apenas por administradores.**
 Não é possível realizar um soft delete em um usuário já deletado.
 
 ## POST - /login
